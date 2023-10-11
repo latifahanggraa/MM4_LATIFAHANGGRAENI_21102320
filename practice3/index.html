@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1A120B; 
+}
+
+.header h1 {
+  font-size: 48px;
+  text-align: center;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #735F32;
+}
+
+.menu {
+  padding: 0 20px;
+}
+
+.menu li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #1A120B; 
+  color: #E5E5CB; 
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.desc h1{
+    color: #735F32;
+}
+
+.desc p{
+    color: #E5E5CB;
+}
+
+.menu li:hover {
+  background-color: #3C2A21; 
+  color: #FFFFFF;
+}
+
+.aside {
+  background-color: #735F32; 
+  padding: 20px;
+  color: #FFFFFF;
+  text-align: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.aside h2 {
+  margin: 20px 0;
+}
+
+.footer {
+  background-color: #735F32; 
+  color: #FFFFFF;
+  text-align: center;
+  padding: 10px 0;
+  transition: background-color 0.3s;
+}
+
+.footer:hover {
+  background-color: #556B2F; 
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Tentang</h1>
+</div>
+
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+    <ul>
+      <li>Latifah Anggraeni</li>
+      <li>Fakultas Informatika Program Studi S1 Teknik Informatika 2023</li>
+      <li>Institut Teknologi Telkom Purwokerto</li>
+      <li>Jawa Tengah</li>
+    </ul>
+  </div>
+
+  <div class="col-6 col-s-9 desc">
+    <h1>Latifah Anggraeni</h1>
+    <p>Saya merupakan mahasiswa Tingkat 3 Program Studi S1 Teknik Informatika di Institut Teknologi Telkom Purwokerto. Saya berasal dari Cilacap, Jawa Tengah.</p>
+  </div>
+
+  <div class="col-3 col-s-12">
+    <div class="aside">
+      <h2>Tempat Tanggal Lahir</h2>
+      <p>Cilacap, 5 Maret 2003</p>
+      <h2>Kata-kata Inspirasi</h2>
+      <p>"Life is Success" sukses sudah berproses sejauh ini merupakah hal yang tak mudah. Apresiasi diri!!!</p>
+      <h2>MBTI</h2>
+      <p>INTP-T.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Latihan Pemrograman Web dengan dosen pengampu Bapak Abednego Dwi Septiadi.</p>
+</div>
+</body>
+</html>
