@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #grad1 {
+                height: 200px;
+                background-color: red; /* For browsers that do not support gradients */
+                background-image: linear-gradient(red, yellow);
+            }
+
+            #grad2 {
+                height: 200px;
+                background-color: red; /* For browsers that do not support gradients */
+                background-image: linear-gradient(red, orange, yellow, green, blue, indigo, violet);
+            }
+
+            #grad3 {
+                height: 200px;
+                background-color: red; /* For browsers that do not support gradients */
+                background-image: linear-gradient(red 10%, green 85%, blue 90%);
+            }
+
+            #sunset1 {
+                height: 250px;
+                background-color: blue;
+                background-image: linear-gradient(yellow, red, blue);
+                position: relative;
+            }
+
+            #sunset2 {
+                width: 100px;
+                height: 50px;
+                background-color: #FFD700;
+                background-image: linear-gradient(yellow, red);
+                border-radius: 12rem 12rem 0 0;
+                position: absolute;
+                top: 34%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            #sunset3 {
+                height: 115px;
+                background-color: blue;
+                background-image: linear-gradient(black, blue);
+                position: relative;
+                top: 54%;
+            }
+
+            #sunset3::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: radial-gradient(circle, rgba(255, 170, 0, 0.7), transparent);
+                bottom: 0;
+                left: 0;
+            }
+
+            a {
+                text-decoration: none;
+                padding: 8px;
+                margin-bottom: 7px;
+                background-color: #33b5e5;
+                color: #ffffff;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <h1>Linear Gradient - Top to Bottom</h1>
+        <p>This linear gradient starts red at the top, transitioning to yellow at the bottom:</p>
+
+        <div id="grad1"></div>
+
+        <h2>7 Color Stops (evenly spaced):</h2>
+        <div id="grad2"></div>
+
+        <h2>3 Color Stops (not evenly spaced):</h2>
+        <div id="grad3"></div>
+
+
+        <h1>Linear Gradient - Sunset</h1>
+        <p>this is a sunset view using linear gradient </p>
+
+        <div id="sunset1">
+            <div id="sunset3"></div>
+            <div id="sunset2"></div>
+        </div>
+        <br>
+        <a href="../index.html">Back</a>
+
+    </body>
+</html>
