@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+  background-color: rgb(238, 238, 238);
+}
+
+.header {
+  background-color: #27374D;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: #3E54AC;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #394867;
+}
+
+.aside {
+  background-color: #394867;
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: rgb(31, 86, 168);
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>LATIFAH ANGGRAENI | 21102320 | S1 IF-MM4</h1>
+</div>
+
+<div class="row">
+  <div class="col-3 col-s-3 menu">
+    <ul>
+      <a href="inline_script.html"><li>Inline Script</li></a>
+      <a href="embedded_script.html"><li>Embedded Script</li></a>
+      <a href="external_script.html"><li>External Script</li></a>
+      <a href="js_dom/dom_intro.html"><li>DOM Intro</li></a>
+      <a href="js_dom/dom_method.html"><li>DOM Method</li></a>
+      <a href="js_dom/dom_document.html"><li>DOM Document</li></a>
+      <a href="js_dom/dom_elements.html"><li>DOM Elements</li></a>
+      <a href="js_dom/dom_html.html"><li>DOM HTML</li></a>
+      <a href="js_dom/dom_css.html"><li>DOM CSS</li></a>
+      <a href="js_dom/dom_animations.html"><li>DOM Animations</li></a>
+      <a href="js_dom/dom_events.html"><li>DOM Events</li></a>
+      <a href="js_dom/dom_event_listener.html"><li>DOM Event Listener</li></a>
+      <a href="js_dom/dom_navigations.html"><li>DOM Navigations</li></a>
+      <a href="js_dom/dom_nodes.html"><li>DOM Nodes</li></a>
+      <a href="js_dom/dom_collections.html"><li>DOM Collections</li></a>
+      <a href="js_dom/dom_node_list.html"><li>DOM Node List</li></a>
+
+    </ul>
+  </div>
+
+  <div class="col-6 col-s-9">
+    <h1>Praktikum 3</h1>
+    <p>Mata Kuliah Pemrograman Web dengan menerapkan JS HTML DOM</p>
+  </div>
+
+  <div class="col-3 col-s-12">
+    <div class="aside">
+      <h2>Tentang Saya</h2>
+      <p>Perkenalkan nama saya Latifah Anggraeni, mahasiswa S1 Teknik Informatika ITTP. </p>
+      <p>Saya memiliki ketertarikan terhadap UI/UX Design dan Mobile Development.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Latihan Fundamental Javascript Pemrograman Web</p>
+</div>
+
+</body>
+</html>
