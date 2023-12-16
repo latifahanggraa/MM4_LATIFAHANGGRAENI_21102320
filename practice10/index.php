@@ -1,5 +1,6 @@
 <?php 
     include "koneksi.php";
+    session_start();
     $qkelas = "select * from kelas"; 
     $data_kelas = $conn->query($qkelas);
     $qmahasiswa = "select * from mahasiswa"; 
@@ -17,7 +18,8 @@
     <title>Form Mahasiswa</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -28,7 +30,6 @@
     <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
     <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
     <meta name="theme-color" content="#563d7c">
-    <link href="../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
     <style>
@@ -39,6 +40,11 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
+      }
+
+      .img-mahasiswa {
+        width: 75px;
+        height: 100px;
       }
 
       @media (min-width: 768px) {
@@ -75,11 +81,22 @@
           ?>
           <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <!-- Mengambil foto dari folder upload -->
+              <img src="<?php echo $value['foto']; ?>" alt="Foto Mahasiswa" class="img-thumbnail img-mahasiswa"> 
               <div>
                 <h6 class="my-0"><?php echo $value['nama_lengkap'] ?></h6>
+                <span class="text-muted"><?php echo $kelas['nama'] ?></span><br>
                 <small class="text-muted"><?php echo $value['alamat'] ?></small> 
               </div>
-              <span class="text-muted"><?php echo $kelas['nama'] ?></span>
+              
+              <div  class="mt-auto bd-highlight">
+                <a href="hapus_data.php?mahasiswa_id=<?php echo $value['mahasiswa_id'] ?>" type="button" class="close btn-sm">
+                  <span class="fa fa-trash"></span>
+                </a>
+                <a href="update_form.php?mahasiswa_id=<?php echo $value['mahasiswa_id'] ?>" type="button" class="close btn-sm">
+                  <span class="fa fa-pencil"></span>
+                </a> 
+              </div>
             </li>
           </ul>
           <?php
@@ -89,7 +106,11 @@
 
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Input Data</h4>
-          <form action="simpan_mahasiswa.php" method="POST">
+          <div id="readMessage">
+            <?php include "read_message.php" ?>
+          </div>
+          </div>
+          <form action="simpan_mahasiswa.php" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nama_lengkap">Nama Lengkap</label>
                 <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required>
@@ -111,6 +132,11 @@
                     ?>
                 </select>
             </div>
+            <div class="mb-3">
+              <!-- menambahkan fungsi untuk upload foto -->
+                <label for="foto">Foto</label>
+                <input type="file" class="form-control-file" id="foto" name="foto" accept="image/*">
+            </div>
             <div class="row">
             </div>
             <hr class="mb-4">
@@ -121,7 +147,7 @@
 
     </div>
   <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2017-2019 Company Name</p>
+    <p class="mb-1">&copy; IT Telkom Purwokerto</p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="#">Privacy</a></li>
       <li class="list-inline-item"><a href="#">Terms</a></li>
@@ -131,5 +157,13 @@
 </div>
 <script src="../node_modules/jquery/dist/jquery.min.js" crossorigin="anonymous"></script>
 <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script>
+  setTimeout(function() {
+    var readMessage = document.getElementById("readMessage");
+    if (readMessage) {
+      readMessage.style.display = 'none';
+    }
+  }, 5000);
+</script>
 </body>
 </html>
